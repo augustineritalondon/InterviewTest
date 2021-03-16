@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Interview - Test</title>
+</head>
+<body>
+    <div id="app" class="app">
+        <div class="left-side">
+            <div class="left-side-content">
+                <h1>Hello, <span>Lumbex</span></h1>
+                <p>Welcome to your dashboard, kindly sort through the users</p>
+
+                <div class="display">
+                    <h4>Show users</h4>
+                    <div>
+                        <button style="background:#84573B"><i class="fa fa-users fa-2x" style="padding-right: .5em;"></i> All Users</button>
+                        <button style="background:#D25288"><i class="fa fa-venus fa-2x" style="padding-right: .5em;"></i> Female Users</button>
+                        <button style="background:#335AA3"><i class="fa fa-mars fa-2x" style="padding-right: .5em;"></i> Male Users</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="right-side-content">
+                <div>
+                    <h2>All Users</h2>
+                    <div class="search">
+                        <div class="search-form">
+                            <i class="fa fa-search"></i>
+                            <input class="field" placeholder="Find a User" type="text">
+                        </div>
+                        <div class="toggle">
+                            <h5>show country</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-box">
+                    <div class="image"><img :src="image" alt=""></div>
+                    <div class="user-box-content">
+                        <h4>{{ fullName }}</h4>
+                        <p style="font-style: italic;" class="UserAddress">{{ location }}</p>
+                        <div class="contact-info">
+                            <p><i class="fa fa-envelope-square"></i> {{ email }}</p>
+                            <p><i class="fa fa-phone"></i> {{ phone }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://use.fontawesome.com/feb8a0e0f5.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

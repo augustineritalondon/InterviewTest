@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+body{
+    color: #0B2856;
+    font-family: Rubik;
+    line-height: 14px;
+}
+img{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+    height: 4em;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 1em;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: .5em;
+}
+/* TYPOGRAPHY */
+
+/* Layout */
+/* left side of screen */
+.app{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+}
+.left-side-content{
+    margin-top: 3em;
+}
+.display{
+    margin-top: 2em;
+}
+
+/* right side of screen */
+.right-side{
+    background: #DEE8F1;
+    height: 90vh;
+    width: 100%;
+    border-radius: 1em;
+}
+.right-side-content{
+    width: 90%;
+    margin: 3em auto;
+}
+
+/* search */
+.search{
+    display: flex;
+    justify-content: space-between;
+}
+.search-form{
+    width: 60%;
+    margin-left: -20px;
+}
+.toggle{
+    width: 40%;
+}
+.search-form i {
+    position: relative;
+    left: 30px;
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+}
+.search-form .field {
+    margin: 0 auto;
+    width: 50%;
+    height: 3.5em;
+    padding: 0 20px;
+    font-size: .8rem;
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    background: #F7F8FD;
+}
+/* end of search */
+
+
+/* user information */
+.user-box{
+    display: flex;
+    background: #FFFFFF;
+    color: #252A3E;
+    box-shadow: 0px 0px 44px rgba(37, 42, 62, 0.08);
+    border-radius: 8px;
+}
+.user-box p{
+    color:rgba(37, 42, 62, 0.5);
+}
+.user-box .image{
+    width: 25%;
+}
+.user-box img{
+    margin-top: 1em;
+    margin-left: .75em;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #335AA3;
+    border-radius: 50%;
+}
+.user-box-content{
+    margin-top: .2em;
+    width: 70%;
+}
+.user-box .contact-info{
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-size: 14px;
+}
+.user-box .contact-info p{
+    margin-top: -2px;
+}
+.UserAddress{
+    margin-top: -.5em;
+}
+/* end of user information */
+
+
+/* Media Queries */
+
+@media (min-width: 800px) {
+    .app {
+      flex-direction: row;
+    }
+    .left-side{
+        width: 50%;
+    }
+    .left-side-content{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20%;
+    }
+    .display{
+        margin-top: 4em;
+    }
+    .right-side{
+        height: 95vh;
+        width: 50%;
+        border-radius: 1em;
+    }
+    .search-form{
+        width: 70%;
+        margin-left: -20px;
+    }
+    .toggle{
+        width: 30%;
+    }
+    .search-form .field {
+        width: 70%;
+    }
+    .user-box{
+        justify-content: space-between;
+    }
+    .user-box .image{
+        width: 18%;
+    }
+    .user-box img{
+        width: 70px;
+        height: 70px;
+        border: 1px solid blue;
+        border-radius: 50%;
+    }
+    .user-box-content{
+        margin-top: .2em;
+        width: 80%;
+    }
+    .user-box .contact-info{
+        display: flex;
+        flex-direction: row;
+        font-style: italic;
+        font-size: 14px;
+    }
+    .user-box .contact-info p{
+        margin-right: 1em;
+    }
+}
