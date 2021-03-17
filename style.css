@@ -40,13 +40,14 @@ button{
 /* right side of screen */
 .right-side{
     background: #DEE8F1;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     border-radius: 1em;
 }
 .right-side-content{
     width: 90%;
     margin: 3em auto;
+    max-height: 85vh;
 }
 
 /* search */
@@ -78,6 +79,61 @@ button{
     padding-left: 40px;
     background: #F7F8FD;
 }
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider { 
+    position: absolute;
+    cursor: pointer;
+    width: 43px;
+    height: 20px;
+    top: 17%;
+    left: 91%;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+   
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    /* left: 4px; */
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #335AA3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #335AA3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+  border-radius: 50%;
+  }
 /* end of search */
 
 
@@ -88,6 +144,7 @@ button{
     color: #252A3E;
     box-shadow: 0px 0px 44px rgba(37, 42, 62, 0.08);
     border-radius: 8px;
+    margin-bottom: .7em;
 }
 .user-box p{
     color:rgba(37, 42, 62, 0.5);
@@ -103,8 +160,7 @@ button{
     border: 2px solid #335AA3;
     border-radius: 50%;
 }
-.user-box-content{
-    margin-top: .2em;
+.user-box-content{  
     width: 70%;
 }
 .user-box .contact-info{
@@ -114,11 +170,27 @@ button{
     font-size: 14px;
 }
 .user-box .contact-info p{
-    margin-top: -2px;
+    margin-top: -.5em;
 }
 .UserAddress{
     margin-top: -.5em;
+    font-size: 14px;
 }
+.page-button{
+    text-align: right;
+    margin-left: 10em;
+}
+.page-button button{
+    width: 10%;
+    height: 15%;
+    margin-top: .6em;
+    padding: .3em;
+    color: white;
+    background-color: #335AA3;
+    text-align: center;
+}
+
+
 /* end of user information */
 
 
@@ -161,14 +233,16 @@ button{
         width: 18%;
     }
     .user-box img{
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
         border: 1px solid blue;
         border-radius: 50%;
     }
     .user-box-content{
-        margin-top: .2em;
         width: 80%;
+    }
+    .user-box-content h4{
+        margin: 1em 0;
     }
     .user-box .contact-info{
         display: flex;

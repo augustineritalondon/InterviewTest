@@ -10,7 +10,7 @@
     <div id="app" class="app">
         <div class="left-side">
             <div class="left-side-content">
-                <h1>Hello, <span>Lumbex</span></h1>
+                <h1>Hello, <b>Lumbex</b></h1>
                 <p>Welcome to your dashboard, kindly sort through the users</p>
 
                 <div class="display">
@@ -35,23 +35,32 @@
                         </div>
                         <div class="toggle">
                             <h5>show country</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="user-box">
-                    <div class="image"><img :src="image" alt=""></div>
-                    <div class="user-box-content">
-                        <h4>{{ fullName }}</h4>
-                        <p style="font-style: italic;" class="UserAddress">{{ location }}</p>
-                        <div class="contact-info">
-                            <p><i class="fa fa-envelope-square"></i> {{ email }}</p>
-                            <p><i class="fa fa-phone"></i> {{ phone }}</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
                         </div>
                     </div>
                 </div>
 
                 
+                <div class="user-box" v-for="user in page">
+                    <div class="image"><img :src="user.picture.thumbnail" alt=""></div>
+                    <div class="user-box-content">
+                        <h4>{{ user.name.first }} {{ user.name.last }} </h4>
+                        <p style="font-style: italic;" class="UserAddress">{{ user.location.street.number }}
+                             {{ user.location.street.name }} {{ user.location.city }} {{ user.location.state }}</p>
+                        <div class="contact-info">
+                            <p><i class="fa fa-envelope-square"></i> {{ user.email }}</p>
+                            <p><i class="fa fa-phone"></i> {{ user.phone }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-button">
+                    <button @click="previous()"><i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i></button>
+                    <button @click="next()"><i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i></button>
+                </div>
 
 
             </div>
