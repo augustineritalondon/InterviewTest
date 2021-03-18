@@ -61,6 +61,7 @@ button{
 }
 .toggle{
     width: 40%;
+    position: relative;
 }
 .search-form i {
     position: relative;
@@ -92,9 +93,8 @@ button{
     cursor: pointer;
     width: 43px;
     height: 20px;
-    top: 17%;
-    left: 91%;
-    right: 0;
+    top: 20px;
+    right: 10px;
     bottom: 0;
     background-color: #ccc;
     -webkit-transition: .4s;
@@ -175,6 +175,9 @@ input:checked + .slider:before {
 .UserAddress{
     margin-top: -.5em;
     font-size: 14px;
+}
+.country{
+    margin-top: -.5em;
 }
 .page-button{
     text-align: right;

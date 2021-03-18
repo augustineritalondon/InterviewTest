@@ -16,9 +16,9 @@
                 <div class="display">
                     <h4>Show users</h4>
                     <div>
-                        <button style="background:#84573B"><i class="fa fa-users fa-2x" style="padding-right: .5em;"></i> All Users</button>
-                        <button style="background:#D25288"><i class="fa fa-venus fa-2x" style="padding-right: .5em;"></i> Female Users</button>
-                        <button style="background:#335AA3"><i class="fa fa-mars fa-2x" style="padding-right: .5em;"></i> Male Users</button>
+                        <button v-on:click="fetchData()" style="background:#84573B"><i class="fa fa-users fa-2x" style="padding-right: .5em;"></i> All Users</button>
+                        <button v-on:click="onlyGender('female')" style="background:#D25288"><i class="fa fa-venus fa-2x" style="padding-right: .5em;"></i> Female Users</button>
+                        <button v-on:click="onlyGender('male')" style="background:#335AA3"><i class="fa fa-mars fa-2x" style="padding-right: .5em;"></i> Male Users</button>
                     </div>
                 </div>
             </div>
@@ -31,23 +31,24 @@
                     <div class="search">
                         <div class="search-form">
                             <i class="fa fa-search"></i>
-                            <input class="field" placeholder="Find a User" type="text">
+                            <!-- <input class="field" placeholder="Find a User" type="text"> -->
+                            <input class="field" placeholder="Find a User" type="text" v-model="searchValue" @keyup='search(searchValue)'>
                         </div>
                         <div class="toggle">
                             <h5>show country</h5>
                             <label class="switch">
-                                <input type="checkbox">
+                                <input type="checkbox" v-model="toggle">
                                 <span class="slider round"></span>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                
                 <div class="user-box" v-for="user in page">
                     <div class="image"><img :src="user.picture.thumbnail" alt=""></div>
                     <div class="user-box-content">
                         <h4>{{ user.name.first }} {{ user.name.last }} </h4>
+                        <p v-if="toggle" class="country"> {{ user.location.country }} </p>
                         <p style="font-style: italic;" class="UserAddress">{{ user.location.street.number }}
                              {{ user.location.street.name }} {{ user.location.city }} {{ user.location.state }}</p>
                         <div class="contact-info">
@@ -57,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="page-button">
+                <div class="page-button" v-if="maxPages">
                     <button @click="previous()"><i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i></button>
                     <button @click="next()"><i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i></button>
                 </div>
